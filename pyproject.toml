@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "triadlang"
+version = "0.1.0"
+description = "The TriadLang language — runs .tri programs on the Triad equation"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "qrv0" }
+]
+keywords = [
+    "triad",
+    "triadlang",
+    "programming-language",
+    "interpreter",
+    "compiler",
+    "pde-runtime",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Compilers",
+    "Topic :: Software Development :: Interpreters",
+]
+
+dependencies = [
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+science = ["scipy>=1.10"]
+viz = ["matplotlib>=3.7"]
+gpu = ["cupy-cuda12x"]
+dev = ["pytest"]
+
+[project.scripts]
+triad = "triadlang.cli.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["triadlang*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
