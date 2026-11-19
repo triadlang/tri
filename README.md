@@ -192,4 +192,7 @@ This matters when you want to describe a system of coupled fields and observe wh
 
 ## License
 
-Same terms as the parent TriadLang project. See `LICENSE`.
+TriadLang Proprietary Source-Available License
+
+Copyright © 2026 triadlang.
+All rights reserved.
